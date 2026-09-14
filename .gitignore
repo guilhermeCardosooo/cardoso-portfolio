@@ -42,3 +42,12 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+
+# Files
+src/app/modules/screens/portfolio/portfolio copy.html
+src/app/modules/screens/portfolio/portfolio copy.scss
+src/app/modules/screens/portfolio/portfolio copy 2.html
+src/app/modules/screens/portfolio/portfolio copy 2.scss
+src/app/modules/screens/portfolio/portfolio copy 3.html
+src/app/modules/screens/portfolio/portfolio copy 3.scss

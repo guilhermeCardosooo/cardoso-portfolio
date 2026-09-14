@@ -1,0 +1,73 @@
+{
+    "profile": {
+        "banner": "images/banner.jpeg",
+        "photo": "images/photo.jpeg",
+        "name": "Guilherme Cardoso"
+    },
+    "language": [
+        { "title": "C/C++", "icon": "devicon-cplusplus-plain" },
+        { "title": "Java", "icon": "devicon-java-plain" },
+        { "title": "TypeScript", "icon": "devicon-typescript-plain" },
+        { "title": "JavaScript", "icon": "devicon-javascript-plain" },
+        { "title": "Python", "icon": "devicon-python-plain" },
+        { "title": "Pawn", "icon": "chess_pawn" } 
+    ],
+    "database": [
+        {  "title": "MySQL", "icon": "devicon-mysql-plain" },
+        {  "title": "PostgreSQL", "icon": "devicon-postgresql-plain" },
+        {  "title": "MongoDB", "icon": "devicon-mongodb-plain" },
+        {  "title": "SQLite", "icon": "devicon-sqlite-plain" }
+    ],
+    "technology": [
+        {"title": "Node.js", "icon": "devicon-nodejs-plain" },
+        {"title": "Bun.js", "icon": "devicon-bun-plain" },
+        {"title": "Spring", "icon": "devicon-spring-plain" },
+        {"title": "Spring Boot", "icon": "devicon-spring-plain" },
+        {"title": "Angular", "icon": "devicon-angular-plain" },
+        {"title": "React Native", "icon": "devicon-react-original" },
+        {"title": "Git", "icon": "devicon-git-plain" },
+        {"title": "GitHub", "icon": "devicon-github-original" },
+        {"title": "CI/CD", "icon": "technology-symbol" },
+        {"title": "Lombok", "icon": "technology-symbol" }
+    ],
+    "pt-br": {
+        "profile": {
+            "role": "Desenvolvedor Full-Stack",
+            "about": [
+                "Sou desenvolvedor com base sólida em backend e atualmente expandindo minha atuação para full-stack, aprendendo e construindo aplicações com frameworks modernos de front-end.",
+                "Tenho me dedicado intensamente ao ecossistema Java e TypeScript. Minha trajetória na programação começou com Pawn e passou por C/C++, JavaScript e Python, o que me deu uma boa visão de baixo nível e arquitetura.",
+                "Gosto de entender como as coisas funcionam e transformar ideias em sistemas funcionais, organizados e fáceis de manter."
+            ]
+        }
+    },
+    "en-us": {
+        "profile": {
+            "role": "Full-Stack Developer",
+            "about": [
+                "I am a developer with a solid foundation in backend development, currently expanding into full-stack by learning and building applications with modern front-end frameworks.",
+                "I have been heavily dedicated to the Java and TypeScript ecosystems. My programming journey started with Pawn and moved through C/C++, JavaScript, and Python, giving me strong insights into low-level mechanics and architecture.",
+                "I enjoy understanding how things work and turning ideas into functional, well-structured, and maintainable systems."
+            ]
+        }
+    },
+    "es-es": {
+        "profile": {
+            "role": "Desarrollador Full-Stack",
+            "about": [
+                "Soy desarrollador con una base sólida en backend y actualmente expandiendo mi campo hacia el full-stack, aprendiendo y creando aplicaciones con frameworks modernos de front-end.",
+                "Me he estado dedicando intensamente al ecosistema Java y TypeScript. Mi trayectoria en programación comenzó con Pawn y pasó por C/C++, JavaScript y Python, brindándome una sólida visión de bajo nivel y arquitectura.",
+                "Me gusta entender cómo funcionan las cosas y transformar ideas en sistemas funcionales, organizados y fáciles de mantener."
+            ]
+        }
+    },
+    "fr-fr": {
+        "profile": {
+            "role": "Développeur Full-Stack",
+            "about": [
+                "Je suis un développeur avec une solide base backend, qui élargit actuellement son champ d'action vers le full-stack en apprenant et en concevant des applications avec des frameworks front-end modernes.",
+                "Je me consacre intensément aux écosystèmes Java et TypeScript. Mon parcours dans la programmation a commencé avec Pawn avant d'évoluer vers C/C++, JavaScript et Python, ce qui m'a apporté une excellente compréhension du bas niveau et de l'architecture.",
+                "J'aime comprendre comment les choses fonctionnent et transformer des idées en systèmes fonctionnels, organisés et faciles à maintenir."
+            ]
+        }
+    }
+}

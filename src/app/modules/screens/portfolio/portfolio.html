@@ -1,0 +1,289 @@
+<div class="portfolio-page">
+    <!-- Background -->
+    <div class="background">
+        <div class="background-grid"></div>
+        <div class="background-light light-one"></div>
+        <div class="background-light light-two"></div>
+    </div>
+
+    <main class="portfolio-card">
+        <header class="profile">
+            <div class="banner">
+                <!-- <div class="banner-grid"></div>
+                <div class="banner-orb orb-one"></div>
+                <div class="banner-orb orb-two"></div> -->
+                <img
+                    class="banner-image"
+                    [src]="storage().portfolio()?.bannerUrl || 'images/banner.jpeg'"
+                />                
+
+                <div class="banner-controls">
+                    <!-- Theme -->
+                    <button
+                        class="banner-control theme-control"
+                        type="button"
+                        aria-label="Change theme"
+                        title="Change theme"
+                        (click)="storage().onChangeTheme()"
+                    >
+                        <span class="material-symbols-outlined">
+                            {{ storage().userTheme() === "dark" ? "light_mode" : "dark_mode" }}
+                        </span>
+                    </button>
+
+                    <!-- Language -->
+                    <div class="language-selector" [class.open]="storage().isMenuOpen()">
+                        <button
+                            class="banner-control language-control"
+                            type="button"
+                            aria-label="Change language"
+                            title="Change language"
+                            [attr.aria-expanded]="storage().isMenuOpen()"
+                            (click)="storage().toggleMenu()"
+                        >
+                            <span class="material-symbols-outlined language-icon">language</span>
+                            <span class="language-code">{{ storage().userLocale() | uppercase }}</span>
+                            <span class="material-symbols-outlined language-arrow">expand_more</span>
+                        </button>
+
+                        <div class="language-menu">
+                            @for (lang of storage().languages; track lang) {
+                                <button
+                                    class="language-option"
+                                    [class.active]="storage().userLocale() === lang"
+                                    type="button"
+                                    (click)="storage().onChangeLanguage(lang)"
+                                >
+                                    <span>{{ lang | uppercase }}</span>
+                                </button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <div class="avatar-wrapper">
+                    <img
+                        class="avatar"
+                        [src]="storage().portfolio()?.avatarUrl || 'images/photo.jpeg'"
+                        [alt]="storage().portfolio()?.name || 'Guilherme Cardoso'"
+                    />
+                </div>
+
+                <div class="identity">
+                    <h1>{{ storage().portfolio()?.name }}</h1>
+                    <span>{{ storage().portfolio()?.role }}</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- CONTENT -->
+        <div class="content">
+            <!-- ABOUT -->
+            <section class="section about-section">
+                <div class="section-heading">
+                    <span class="section-number"> 01 </span>
+                    <h2>{{ storage().labels().aboutMe }}</h2>
+                </div>
+
+                <div class="about-text">
+                    @for (paragraph of storage().portfolio()?.about ?? []; track paragraph) {
+                        <p>{{ paragraph }}</p>
+                    }
+                </div>
+            </section>
+
+            <!-- LANGUAGES -->
+            <section class="section">
+                <div class="section-heading">
+                    <span class="section-number"> 02 </span>
+                    <h2>{{ storage().labels().languages }}</h2>
+                </div>
+
+                <div class="skills-grid">
+                    @for (item of storage().portfolio()?.languages ?? []; track item.title) {
+                        <div class="skill">
+                            <div class="skill-icon">
+                                @if (item.icon.startsWith('devicon-')) {
+                                    <i [class]="item.icon"></i>
+                                } @else {
+                                    <span class="material-symbols-outlined">{{ item.icon }}</span>
+                                }
+                            </div>
+
+                            <div class="skill-info">
+                                <strong>{{ item.title }}</strong>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </section>
+
+            <!-- DATABASE -->
+            <section class="section">
+                <div class="section-heading">
+                    <span class="section-number"> 03 </span>
+                    <h2>{{ storage().labels().databases }}</h2>
+                </div>
+
+                <div class="skills-grid">
+                    @for (db of storage().portfolio()?.databases ?? []; track db.title) {
+                        <div class="skill">
+                            <div class="skill-icon">
+                                <i [class]="db.icon"></i>
+                            </div>
+
+                            <div class="skill-info">
+                                <strong>{{ db.title }}</strong>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </section>
+
+            <!-- TECHNOLOGIES -->
+            <section class="section">
+                <div class="section-heading">
+                    <span class="section-number"> 04 </span>
+                    <h2>{{ storage().labels().technologies }}</h2>
+                </div>
+
+                <div class="technology-grid">
+                    @for (tech of storage().portfolio()?.technologies ?? []; track tech.title) {
+                        <div class="technology">
+                            @if (tech.icon.startsWith('devicon-')) {
+                                <i [class]="tech.icon"></i>
+                            } @else if (tech.icon === 'technology-symbol') {
+                                <span class="technology-symbol">
+                                    {{ tech.title === 'CI/CD' ? 'CI' : (tech.title === 'Lombok' ? 'JB' : 'TS') }}
+                                </span>
+                            } @else {
+                                <span class="material-symbols-outlined">{{ tech.icon }}</span>
+                            }
+
+                            <span>{{ tech.title }}</span>
+                        </div>
+                    }
+                </div>
+            </section>
+
+            <!-- PROJECTS -->
+            <!-- <section class="section projects-section">
+                <div class="section-heading">
+                    <span class="section-number"> 05 </span>
+                    <h2>{{ storage().labels().projects }}</h2>
+                </div>
+
+                <div class="project-wrapper">
+                    <button class="project-arrow" aria-label="Projeto anterior">
+                        <span class="material-symbols-outlined"> arrow_back </span>
+                    </button>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <span class="material-symbols-outlined"> code </span>
+                            </div>
+                        </div>
+
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span> 01 / 03 </span>
+                            </div>
+
+                            <h3>Projeto em destaque</h3>
+
+                            <p>
+                                Uma breve descrição do projeto, seu objetivo e as principais
+                                tecnologias utilizadas.
+                            </p>
+
+                            <a href="#" class="project-link">
+                                Ver projeto
+                                <span class="material-symbols-outlined"> arrow_outward </span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <button class="project-arrow" aria-label="Próximo projeto">
+                        <span class="material-symbols-outlined"> arrow_forward </span>
+                    </button>
+                </div>
+
+                <div class="project-indicators">
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </section> -->
+
+            <!-- CONTACT -->
+            <section class="section contact-section">
+                <div class="section-heading">
+                    <span class="section-number"> 05 </span>
+                    <h2>{{ storage().labels().contactMe }}</h2>
+                </div>
+
+                <div class="contact-grid">
+                    <a href="https://github.com/guilhermeCardosooo" class="contact-card" target="_blank" rel="noopener">
+                        <div class="contact-icon">
+                            <i class="devicon-github-original"></i>
+                        </div>
+
+                        <div>
+                            <strong>GitHub</strong>
+                            <!-- <span>Projetos e código</span> -->
+                        </div>
+
+                        <span class="material-symbols-outlined"> arrow_outward </span>
+                    </a>
+
+                    <a href="https://discord.com/users/393814837081276440" class="contact-card" target="_blank" rel="noopener">
+                        <div class="contact-icon">
+                            <span class="material-symbols-outlined"> forum </span>
+                        </div>
+
+                        <div>
+                            <strong>Discord</strong>
+                            <!-- <span>Entre em contato</span> -->
+                        </div>
+
+                        <span class="material-symbols-outlined"> arrow_outward </span>
+                    </a>
+
+                    <a href="mailto:guilhermecardoso120905@gmail.com" class="contact-card">
+                        <div class="contact-icon">
+                            <span class="material-symbols-outlined"> mail </span>
+                        </div>
+
+                        <div>
+                            <strong>Email</strong>
+                            <!-- <span>Envie uma mensagem</span> -->
+                        </div>
+
+                        <span class="material-symbols-outlined"> arrow_outward </span>
+                    </a>
+
+                    <a
+                        href="https://linkedin.com/in/guilherme-cardoso-bb908335b"
+                        class="contact-card"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <div class="contact-icon">
+                            <i class="devicon-linkedin-plain"></i>
+                        </div>
+
+                        <div>
+                            <strong>LinkedIn</strong>
+                            <!-- <span>Perfil profissional</span> -->
+                        </div>
+
+                        <span class="material-symbols-outlined"> arrow_outward </span>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>

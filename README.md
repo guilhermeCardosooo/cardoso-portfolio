@@ -1,59 +1,88 @@
-# PersonalWebsite
+# ⚡ Cardoso Developer Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.7.
+![Portfolio Demo](https://i.imgur.com/CpDnfxb.mp4)
 
-## Development server
+> **Documentation in other languages:**
+> 
+> [🇧🇷 Português](docs/locales/pt-BR.md) | [🇪🇸 Español](docs/locales/es-ES.md) | [🇫🇷 Français](docs/locales/fr-FR.md)
 
-To start a local development server, run:
+---
 
-```bash
+### 🚀 Introduction & The Story Behind
+This project is my personal developer portfolio and a deliberate step forward in expanding my background into a **Full-Stack** skill set.
+
+My core focus has been centered on backend engineering and **Java**, and it had been several months since I last wrote TypeScript. However, determined to break into modern frontend ecosystems without relying on raw HTML/CSS, I decided to tackle **Angular** head-on — learning its modern architecture and putting this application together in an intensive **single-day sprint**.
+
+---
+
+### 🎨 From Figma Concept to Code
+I believe engineering starts with intentional design before touching code. 
+
+1. **Wireframing & Concept:** I prototyped the initial UI layout, spacing, and visual hierarchy directly in **Figma** (banner placement, skills distribution, cards, and carousel controls).
+2. **AI-Assisted Acceleration:** Rather than letting AI guess the design, I leveraged AI as a pure development copilot to help translate my exact Figma concept into Angular template components quickly, bypassing boilerplate friction.
+3. **Engineering & Architecture:** All state reactivity, TypeScript interfaces, localization pipelines, and CSS token structures were manually refined and engineered.
+
+<p align="center">
+  <img src="docs/assets/figma-concept.png" alt="Figma Concept Design" width="400" />
+  <br>
+  <em>Initial design concept prototyped in Figma before frontend implementation.</em>
+</p>
+
+---
+
+### 🎯 What Was Explored in Angular (Modern v17+)
+Instead of legacy module-based Angular, this project dives straight into modern patterns:
+* **Signals & Granular Reactivity:** Managing theme toggling, dropdown states, and data pipelines using reactive primitives (`signal`, `computed`, `input.required`) with zero change-detection overhead.
+* **Standalone Components:** Lightweight architecture ditching legacy `NgModule` ceremonies.
+* **Strict TypeScript & DTO Layer:** Strict static typing for skills, experiences, and social links, keeping runtime data safe and clean.
+* **Instant i18n & Theme Switching:** Dynamic locale updates (`pt-BR`, `en-US`, `es-ES`, `fr-FR`) and dark/light modes driven by pure CSS custom properties and state signals.
+
+---
+
+### 📂 Project Structure
+```
+cardoso-portfolio
+├─ docs
+│  ├─ assets                 # Demos and Figma mockups
+│  └─ locales                # Multi-language READMEs
+├─ public                    # Profile images and static media
+├─ src
+│  ├─ app
+│  │  ├─ app.config.ts       # Standalone bootstrap configuration
+│  │  ├─ app.ts              # Application root
+│  │  └─ modules
+│  │     ├─ constants        # Translation dictionaries (i18n)
+│  │     ├─ models           # DTOs & strict data interfaces
+│  │     ├─ screens
+│  │     │  └─ portfolio     # Standalone portfolio screen component
+│  │     └─ services         # Reactive state hub (StorageService)
+│  ├─ assets
+│  │  └─ profile.json        # Structured raw portfolio data
+│  ├─ styles.scss            # Theme variables & global resets
+│  └─ main.ts                # Application bootstrapper
+├─ angular.json              # Angular CLI build configurations
+├─ README.md                 # Main technical documentation
+└─ tsconfig.json             # Strict TypeScript compiler flags
+```
+
+---
+
+### 🛠️ Setup & Local Run
+```
+# Clone the repository
+git clone https://github.com/guilhermeCardosooo/cardoso-portfolio.git
+
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+# or
 ng serve
 ```
+Navigate to http://localhost:4200/.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### 📜 License
+Personal project developed for learning, rapid skill prototyping, and showcasing technical evolution.
