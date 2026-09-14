@@ -1,6 +1,6 @@
 # ⚡ Cardoso Developer Portfolio
 
-![Demonstração](https://i.imgur.com/CpDnfxb.mp4)
+![Demonstração](../assets/demo.mp4)
 
 > **Documentação em outros idiomas:**
 > 
